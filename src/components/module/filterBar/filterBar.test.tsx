@@ -1,4 +1,4 @@
-import FilterBar from "src/components/module/filterBar";
+import FilterBar from "src/components/module/filterBar/filterBar";
 import { shallow } from "enzyme";
 
 describe("FilterBar", () => {

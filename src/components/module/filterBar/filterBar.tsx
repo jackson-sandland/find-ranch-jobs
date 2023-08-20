@@ -3,7 +3,7 @@ import { Icon, Stack, TextField, MenuItem } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
-import { JobExperience, JobLocations, JobTitles } from "src/components/module/filterBarConstants";
+import { JobExperience, JobLocations, JobTitles } from "src/components/module/filterBar/filterBarConstants";
 // https://dribbble.com/shots/21587286-Job-Search-Platform
 
 const renderSelectOptions = (optionsArray: string[]) => {

@@ -13,7 +13,7 @@ import {
 } from "./config";
 import TopBar from "src/layout/TopBar";
 import SideBar from "src/layout/SideBar";
-import FilterBar from "src/components/module/filterBar";
+import FilterBar from "src/components/module/filterBar/filterBar";
 
 // TODO: change to your app name or other word
 const TITLE_PRIVATE = "Find Ranch Jobs"; // Title for pages after authentication
