@@ -52,28 +52,25 @@ const FilterBar = () => {
     },
   ];
 
+  const handleRenderFilterOptions = () =>
+    filterOptions.map(({ label, options, onChange, icon }) => (
+      <TextField
+        key={label}
+        select
+        label={label}
+        sx={{ minWidth: "200px", width: "200px" }}
+        onChange={onChange}
+        InputProps={{
+          startAdornment: <Icon sx={{ marginRight: 1, fontSize: 20 }}>{icon}</Icon>,
+        }}
+      >
+        {renderSelectOptions(options)}
+      </TextField>
+    ));
+
   return (
     <Stack direction="row" justifyContent="space-between" spacing={2} sx={{ marginTop: "20px" }}>
-      {filterOptions.map(({ label, options, onChange, icon }) => (
-        <TextField
-          key={label}
-          select
-          label={label}
-          sx={{ minWidth: "200px", width: "200px" }}
-          onChange={onChange}
-          InputProps={{
-            startAdornment: (
-              <Icon
-                sx={{ marginRight: 1, fontSize: 20 }} // Adjust the icon size and margin as needed
-              >
-                {icon}
-              </Icon>
-            ),
-          }}
-        >
-          {renderSelectOptions(options)}
-        </TextField>
-      ))}
+      {handleRenderFilterOptions()}
     </Stack>
   );
 };
