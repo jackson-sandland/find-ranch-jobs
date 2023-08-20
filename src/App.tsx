@@ -1,7 +1,7 @@
-import { AppThemeProvider } from './theme';
-import { AppStore } from './store';
-import { ErrorBoundary } from './components';
-import Routes from './routes';
+import { AppThemeProvider } from "src/theme";
+import { AppStore } from "src/store";
+import { ErrorBoundary } from "src/components";
+import Routes from "src/routes";
 
 /**
  * Root Application Component

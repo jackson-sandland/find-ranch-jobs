@@ -14,8 +14,8 @@ import {
 import TopBar from "src/layout/TopBar";
 import SideBar from "src/layout/SideBar";
 import FilterBar from "src/components/module/filterBar/filterBar";
+import JobListingsGrid from "src/components/module/jobListingsGrid/jobListingsGrid";
 
-// TODO: change to your app name or other word
 const TITLE_PRIVATE = "Find Ranch Jobs"; // Title for pages after authentication
 
 /**
@@ -92,6 +92,7 @@ const PrivateLayout: FunctionComponent<PropsWithChildren> = ({ children }) => {
           title={title}
         />
         <FilterBar />
+        <JobListingsGrid />
         <SideBar
           anchor={onMobile ? SIDE_BAR_MOBILE_ANCHOR : SIDE_BAR_DESKTOP_ANCHOR}
           open={sidebarOpen}
