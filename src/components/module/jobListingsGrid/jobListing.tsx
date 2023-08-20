@@ -1,6 +1,6 @@
-import { Fragment, useState } from "react";
-import { Box, Typography, Button, Chip, Avatar } from "@mui/material";
-import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
+import { FC, Fragment, useState } from "react";
+import { Avatar, Box, Button, Chip, Typography } from "@mui/material";
+import BookmarkBorderOutlinedIcon from "@mui/icons-material/BookmarkBorderOutlined";
 
 interface JobListingProps {
   jobPostingDate: string;
@@ -12,7 +12,7 @@ interface JobListingProps {
   jobLocation: string;
 }
 
-const JobListing: React.FC<JobListingProps> = ({
+const JobListing: FC<JobListingProps> = ({
   jobPostingDate,
   companyName,
   jobTitle,
@@ -40,7 +40,9 @@ const JobListing: React.FC<JobListingProps> = ({
       >
         <Box display="flex" justifyContent="space-between">
           <Typography variant="body2">{jobPostingDate}</Typography>
-          <BookmarkBorderIcon />
+          <Box bgcolor="white" borderRadius="50%">
+            <BookmarkBorderOutlinedIcon />
+          </Box>
         </Box>
         <Box display="flex" alignItems="center" mt={2}>
           <Box>
@@ -58,8 +60,10 @@ const JobListing: React.FC<JobListingProps> = ({
       <Box bgcolor="white" p={2} sx={{ border: "1px solid black" }}>
         <Box display="flex" justifyContent="space-between">
           <Box>
-            <Typography variant="h6">{jobRate}</Typography>
-            <Typography variant="body2" color="text.secondary">
+            <Typography variant="h6" style={{ color: "black" }}>
+              {jobRate}
+            </Typography>
+            <Typography variant="body2" style={{ color: "grey" }}>
               {jobLocation}
             </Typography>
           </Box>
