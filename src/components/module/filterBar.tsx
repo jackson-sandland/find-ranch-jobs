@@ -1,5 +1,8 @@
 import { useState, ChangeEvent } from "react";
-import { Stack, TextField, MenuItem } from "@mui/material";
+import { Icon, Stack, TextField, MenuItem } from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import { JobExperience, JobLocations, JobTitles } from "src/components/module/filterBarConstants";
 // https://dribbble.com/shots/21587286-Job-Search-Platform
 
@@ -29,19 +32,44 @@ const FilterBar = () => {
   };
 
   const filterOptions = [
-    { label: "Job Titles", options: JobTitles, onChange: handleJobTitleChange },
-    { label: "Job Locations", options: JobLocations, onChange: handleJobLocationChange },
-    { label: "Job Experience", options: JobExperience, onChange: handleJobExperienceChange },
+    {
+      label: "Job Titles",
+      options: JobTitles,
+      onChange: handleJobTitleChange,
+      icon: <SearchIcon />,
+    },
+    {
+      label: "Job Locations",
+      options: JobLocations,
+      onChange: handleJobLocationChange,
+      icon: <LocationOnIcon />,
+    },
+    {
+      label: "Job Experience",
+      options: JobExperience,
+      onChange: handleJobExperienceChange,
+      icon: <BusinessCenterIcon />,
+    },
   ];
 
   return (
     <Stack direction="row" justifyContent="space-between" spacing={2} sx={{ marginTop: "20px" }}>
-      {filterOptions.map(({ label, options, onChange }) => (
+      {filterOptions.map(({ label, options, onChange, icon }) => (
         <TextField
+          key={label}
           select
           label={label}
-          sx={{ minWidth: "200px", width: "200px" }} // Adjust the width as needed
+          sx={{ minWidth: "200px", width: "200px" }}
           onChange={onChange}
+          InputProps={{
+            startAdornment: (
+              <Icon
+                sx={{ marginRight: 1, fontSize: 20 }} // Adjust the icon size and margin as needed
+              >
+                {icon}
+              </Icon>
+            ),
+          }}
         >
           {renderSelectOptions(options)}
         </TextField>

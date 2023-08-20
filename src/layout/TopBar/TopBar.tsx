@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import { AppBar, Button, Toolbar, Typography, IconButton } from "@mui/material";
-import { FunctionComponent, ReactNode } from "react";
+import { FC, ReactNode } from "react";
 import StarIcon from "@mui/icons-material/Star";
 
 interface TopBarProps {
@@ -23,7 +23,7 @@ const buttonTitles = [
  * Renders TopBar composition
  * @component TopBar
  */
-const TopBar: FunctionComponent<TopBarProps> = ({ endNode, title = "", ...restOfProps }) => {
+const TopBar: FC<TopBarProps> = ({ endNode, title = "", ...restOfProps }) => {
   const renderButtons = () => {
     return buttonTitles.map((buttonTitle, index) => (
       <Fragment key={index}>
