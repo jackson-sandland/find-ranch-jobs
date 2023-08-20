@@ -1,4 +1,4 @@
-# React + Material UI + Auth starter using TypeScript
+# Find Ranch Jobs
 
 The **TypeScript** edition of **Create React App** plus **Material UI** with set of **reusable components** and utilities to build professional **React Application** faster.
 

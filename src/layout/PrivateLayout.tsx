@@ -11,8 +11,8 @@ import {
   TOP_BAR_DESKTOP_HEIGHT,
   TOP_BAR_MOBILE_HEIGHT,
 } from "./config";
-import TopBar from "./TopBar";
-import SideBar from "./SideBar";
+import TopBar from "src/layout/TopBar";
+import SideBar from "src/layout/SideBar";
 import FilterBar from "src/components/module/filterBar";
 
 // TODO: change to your app name or other word
