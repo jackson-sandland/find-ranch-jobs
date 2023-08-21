@@ -80,7 +80,7 @@ const PrivateLayout: FunctionComponent<PropsWithChildren> = ({ children }) => {
     <Stack
       direction="column"
       sx={{
-        minHeight: "100vh", // Full screen height
+        minHeight: "100vh",
         paddingTop: onMobile ? TOP_BAR_MOBILE_HEIGHT : TOP_BAR_DESKTOP_HEIGHT,
         paddingLeft: sidebarOpen && SIDE_BAR_DESKTOP_ANCHOR.includes("left") ? SIDE_BAR_WIDTH : 0,
         paddingRight: sidebarOpen && SIDE_BAR_DESKTOP_ANCHOR.includes("right") ? SIDE_BAR_WIDTH : 0,
