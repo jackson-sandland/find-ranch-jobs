@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import { AppBar, Button, Toolbar, Typography, IconButton } from "@mui/material";
 import { FC, ReactNode } from "react";
 import StarIcon from "@mui/icons-material/Star";
@@ -24,10 +24,19 @@ const buttonTitles = [
  * @component TopBar
  */
 const TopBar: FC<TopBarProps> = ({ endNode, title = "", ...restOfProps }) => {
+  const [selectedButton, setSelectedButton] = useState<number | null>(null);
   const renderButtons = () => {
-    return buttonTitles.map((buttonTitle, index) => (
+    return buttonTitles.map((buttonTitle: string, index: number) => (
       <Fragment key={index}>
-        <Button onClick={() => {}} style={{ color: "white" }}>
+        <Button
+          onClick={() => setSelectedButton(index)}
+          style={{
+            color: "white",
+            textTransform: "none",
+            fontSize: "18px",
+            borderBottom: selectedButton === index ? "2px solid white" : "none",
+          }}
+        >
           {buttonTitle}
         </Button>
         <IconButton>

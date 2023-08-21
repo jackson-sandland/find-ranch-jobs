@@ -81,7 +81,7 @@ const JobListing: FC<JobListingProps> = ({
         <Box bgcolor={backgroundColor} color="black" borderRadius="16px" p={1} sx={{ borderRadius: "20px" }}>
           <Box display="flex" justifyContent="space-between">
             <Box bgcolor="white" borderRadius="16px" p={1} style={{ margin: "10px" }}>
-              <Typography variant="body2" style={{ color: "black", fontWeight: "bold" }}>
+              <Typography variant="body2" style={{ color: "black", fontWeight: "bold", lineHeight: "15px" }}>
                 {renderJobPostingDate()}
               </Typography>
             </Box>
@@ -110,31 +110,29 @@ const JobListing: FC<JobListingProps> = ({
             <AgricultureIcon style={{ fontSize: 40, marginTop: "18px" }} />
           </Box>
           {handleRenderTags()}
-          <Box bgcolor="white" p={2}>
-            <Box display="flex" justifyContent="space-between">
-              <Box>
-                <Typography variant="h6" style={{ color: "black" }}>
-                  {jobRate}
-                </Typography>
-                <Typography variant="body2" style={{ color: "grey" }}>
-                  {jobLocation}
-                </Typography>
-              </Box>
-              <Button
-                variant="contained"
-                style={{
-                  backgroundColor: "black",
-                  color: "white",
-                  borderRadius: "8px",
-                  textTransform: "none",
-                  height: "32px",
-                  lineHeight: "1px",
-                }}
-              >
-                Details
-              </Button>
-            </Box>
+        </Box>
+        <Box display="flex" justifyContent="space-between" bgcolor="white" p={2}>
+          <Box>
+            <Typography variant="h6" style={{ color: "black" }}>
+              {jobRate}
+            </Typography>
+            <Typography variant="body2" style={{ color: "grey" }}>
+              {jobLocation}
+            </Typography>
           </Box>
+          <Button
+            variant="contained"
+            style={{
+              backgroundColor: "black",
+              color: "white",
+              borderRadius: "8px",
+              textTransform: "none",
+              height: "32px",
+              lineHeight: "1px",
+            }}
+          >
+            Details
+          </Button>
         </Box>
       </Box>
     </Fragment>
