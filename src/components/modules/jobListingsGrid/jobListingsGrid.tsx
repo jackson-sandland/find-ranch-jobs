@@ -23,8 +23,10 @@ const JobListingsGrid = () => {
     setSortBy(event.target.value);
   };
 
+  const backgroundColor = ["#E3DBFA", "#FBE2F4", "#FFE1CC", "#D4F6ED"];
+
   return (
-    <Box style={{ backgroundColor: "white", padding: "0 100px" }}>
+    <Box style={{ backgroundColor: "white", padding: "0 20vw" }}>
       <Box display="flex" flexDirection="row">
         <Box style={{ backgroundColor: "lightgrey", width: "15vw", height: "100vh" }}>
           <Typography variant="h4" style={{ color: "black" }}>
@@ -50,7 +52,7 @@ const JobListingsGrid = () => {
           </Box>
           <Grid container spacing={2}>
             {jobListings.map((job: any, index: number) => (
-              <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
+              <Grid item xs={12} sm={6} md={4} key={index}>
                 <JobListing
                   jobTitle={job.jobTitle}
                   jobPostingDate={job.jobPostingDate}
@@ -59,6 +61,7 @@ const JobListingsGrid = () => {
                   jobTags={job.jobTags}
                   jobRate={job.jobRate}
                   jobLocation={job.jobLocation}
+                  backgroundColor={backgroundColor[index % backgroundColor.length]}
                 />
               </Grid>
             ))}

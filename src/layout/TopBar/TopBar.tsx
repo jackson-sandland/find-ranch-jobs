@@ -40,8 +40,9 @@ const TopBar: FC<TopBarProps> = ({ endNode, title = "", ...restOfProps }) => {
       component="div"
       sx={
         {
-          backgroundColor: 'black', // Makes the TopBar black
-          // boxShadow: 'none', // Uncomment to hide shadow
+          backgroundColor: 'black',
+          boxShadow: 'none', 
+          paddingX: 24,
         }
       }
       {...restOfProps}

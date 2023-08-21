@@ -20,6 +20,7 @@ const StyledBookmarkIcon = styled(({ isBookmarked, onClick, ...props }: StyledBo
 `;
 
 interface JobListingProps {
+  backgroundColor: string;
   jobPostingDate: string;
   companyName: string;
   jobTitle: string;
@@ -30,6 +31,7 @@ interface JobListingProps {
 }
 
 const JobListing: FC<JobListingProps> = ({
+  backgroundColor,
   jobPostingDate,
   companyName,
   jobTitle,
@@ -38,7 +40,8 @@ const JobListing: FC<JobListingProps> = ({
   jobRate,
   jobLocation,
 }) => {
-  const colors = ["primary.main", "secondary.main", "error.main", "warning.main", "info.main", "success.main"];
+  // const colors = ["primary.main", "secondary.main", "error.main", "warning.main", "info.main", "success.main"];
+  const colors = ["#E3DBFA", "#FBE2F4", "#FFE1CC", "#D4F6ED"];
   const [colorIndex, setColorIndex] = useState(0);
   const [isBookmarked, setIsBookmarked] = useState(false); 
 
@@ -65,7 +68,7 @@ const JobListing: FC<JobListingProps> = ({
   return (
     <Fragment>
       <Box
-        bgcolor={colors[colorIndex]}
+        bgcolor={backgroundColor}
         color="black"
         borderRadius="16px"
         p={2}
