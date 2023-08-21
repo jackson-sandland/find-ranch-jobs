@@ -49,6 +49,8 @@ const JobListingsGrid = () => {
     </Grid>
   );
 
+  // look for that tutorial / do research for how to use ML to make search results more relevant
+
   return (
     <Box style={{ backgroundColor: "white", padding: "0 20vw" }}>
       <Box display="flex" flexDirection="row">
@@ -68,8 +70,8 @@ const JobListingsGrid = () => {
                 Sort By
               </Typography>
               <Select value={sortBy} onChange={handleSortChange} sx={{ color: "black" }}>
-                <MenuItem value={"date"}>Date</MenuItem>
-                <MenuItem value={"title"}>Title</MenuItem>
+                <MenuItem value={"date"}>Relevance</MenuItem>
+                <MenuItem value={"title"}>Date</MenuItem>
               </Select>
               <StyledTuneIcon />
             </Box>

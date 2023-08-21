@@ -1,33 +1,42 @@
-// import { useState } from "react";
-// import { Grid, Typography, Box, Select, MenuItem } from "@mui/material";
-// import { JobListing } from "src/components/modules/jobListingsGrid/jobListing";
+import { shallow, ShallowWrapper } from "enzyme";
+import JobListingsGrid from "src/components/modules/jobListingsGrid/jobListingsGrid";
 
-// const JobListingsGrid = ({ jobListings }) => {
-//   const [sortBy, setSortBy] = useState("date");
+describe("JobListingsGrid", () => {
+  let wrapper: ShallowWrapper;
 
-//   const handleSortChange = (event) => {
-//     setSortBy(event.target.value);
-//   };
+  beforeEach(() => {
+    wrapper = shallow(<JobListingsGrid />);
+  });
 
-//   return (
-//     <Box>
-//       <Box display="flex" justifyContent="space-between" alignItems="center">
-//         <Typography variant="h4">Job Listings</Typography>
-//         <Box display="flex" alignItems="center">
-//           <Typography variant="h6">{jobListings.length} Listings</Typography>
-//           <Select value={sortBy} onChange={handleSortChange}>
-//             <MenuItem value={"date"}>Date</MenuItem>
-//             <MenuItem value={"title"}>Title</MenuItem>
-//           </Select>
-//         </Box>
-//       </Box>
-//       <Grid container spacing={2}>
-//         {jobListings.map((job, index) => (
-//           <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
-//             <JobListing job={job} />
-//           </Grid>
-//         ))}
-//       </Grid>
-//     </Box>
-//   );
-// };
+  it("should render correctly", () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it("should render a <Grid />", () => {
+    expect(wrapper.find("Grid").length).toEqual(1);
+  });
+
+  it("should render a <Box />", () => {
+    expect(wrapper.find("Box").length).toEqual(1);
+  });
+
+  it("should render a <Typography />", () => {
+    expect(wrapper.find("Typography").length).toEqual(1);
+  });
+
+  it("should render a <Select />", () => {
+    expect(wrapper.find("Select").length).toEqual(1);
+  });
+
+  it("should render a <MenuItem />", () => {
+    expect(wrapper.find("MenuItem").length).toEqual(2);
+  });
+
+  it("should render a <StyledTuneIcon />", () => {
+    expect(wrapper.find("StyledTuneIcon").length).toEqual(1);
+  });
+
+  it("should render a <JobListing />", () => {
+    expect(wrapper.find("JobListing").length).toEqual(1);
+  });
+});

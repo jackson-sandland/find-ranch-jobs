@@ -1,11 +1,11 @@
 {
-  "name": "react-typescript-material",
+  "name": "find-ranch-jobs",
   "version": "2.1.19",
   "description": "_DESCRIPTION_",
   "author": {
-    "name": "Anton Karpenko",
-    "email": "i@karpolan.com",
-    "url": "https://karpolan.com"
+    "name": "Jackson Sandland",
+    "email": "findranchjobs@admin.com",
+    "url": "https://findranchjobs.com"
   },
   "private": true,
   "keywords": [

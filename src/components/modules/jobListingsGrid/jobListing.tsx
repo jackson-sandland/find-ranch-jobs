@@ -44,7 +44,6 @@ const JobListing: FC<JobListingProps> = ({
   jobRate,
   jobLocation,
 }) => {
-  // const colors = ["primary.main", "secondary.main", "error.main", "warning.main", "info.main", "success.main"];
   const [isBookmarked, setIsBookmarked] = useState(false);
 
   const handleBookmarkToggle = () => {
