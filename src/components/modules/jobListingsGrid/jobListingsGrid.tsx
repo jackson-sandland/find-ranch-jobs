@@ -4,7 +4,9 @@ import JobListing from "src/components/modules/jobListingsGrid/jobListing";
 import { jobPostings } from "src/components/modules/jobListingsGrid/jobListingsGridConstants";
 import TuneIcon from "@mui/icons-material/Tune";
 import { styled } from "@mui/system";
+import { JobListingProps } from "src/components/modules/jobListingsGrid/jobListing";
 
+const gridCellBackgrounColor = ["#E3DBFA", "#FBE2F4", "#FFE1CC", "#D4F6ED"];
 const StyledTuneIcon = styled(TuneIcon)({
   fontSize: 24,
   padding: "2px",
@@ -23,12 +25,34 @@ const JobListingsGrid = () => {
     setSortBy(event.target.value);
   };
 
-  const backgroundColor = ["#E3DBFA", "#FBE2F4", "#FFE1CC", "#D4F6ED"];
+  const handleRenderJobListings = () => (
+    <Grid container spacing={2}>
+      {jobListings.map(
+        (
+          { jobTitle, jobPostingDate, companyName, companyIcon, jobTags, jobRate, jobLocation }: JobListingProps,
+          index: number
+        ) => (
+          <Grid item xs={12} sm={6} md={4} key={index}>
+            <JobListing
+              jobTitle={jobTitle}
+              jobPostingDate={jobPostingDate}
+              companyName={companyName}
+              companyIcon={companyIcon}
+              jobTags={jobTags}
+              jobRate={jobRate}
+              jobLocation={jobLocation}
+              backgroundColor={gridCellBackgrounColor[index % gridCellBackgrounColor.length]}
+            />
+          </Grid>
+        )
+      )}
+    </Grid>
+  );
 
   return (
     <Box style={{ backgroundColor: "white", padding: "0 20vw" }}>
       <Box display="flex" flexDirection="row">
-        <Box style={{ backgroundColor: "lightgrey", width: "15vw", height: "100vh", margin: "40px" }}>
+        <Box style={{ backgroundColor: "lightgrey", width: "18vw", height: "100vh", margin: "40px" }}>
           <Typography variant="h4" style={{ color: "black" }}>
             SIDEBAR
           </Typography>
@@ -50,22 +74,7 @@ const JobListingsGrid = () => {
               <StyledTuneIcon />
             </Box>
           </Box>
-          <Grid container spacing={2}>
-            {jobListings.map((job: any, index: number) => (
-              <Grid item xs={12} sm={6} md={4} key={index}>
-                <JobListing
-                  jobTitle={job.jobTitle}
-                  jobPostingDate={job.jobPostingDate}
-                  companyName={job.companyName}
-                  companyIcon={job.companyIcon}
-                  jobTags={job.jobTags}
-                  jobRate={job.jobRate}
-                  jobLocation={job.jobLocation}
-                  backgroundColor={backgroundColor[index % backgroundColor.length]}
-                />
-              </Grid>
-            ))}
-          </Grid>
+          {handleRenderJobListings()}
         </Box>
       </Box>
     </Box>
