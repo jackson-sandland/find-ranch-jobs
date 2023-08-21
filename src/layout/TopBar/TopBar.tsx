@@ -27,7 +27,7 @@ const TopBar: FC<TopBarProps> = ({ endNode, title = "", ...restOfProps }) => {
   const renderButtons = () => {
     return buttonTitles.map((buttonTitle, index) => (
       <Fragment key={index}>
-        <Button onClick={() => {}}>{buttonTitle}</Button>
+        <Button onClick={() => {}} style={{ color: "white" }}>{buttonTitle}</Button>
         <IconButton>
           <StarIcon />
         </IconButton>
@@ -40,6 +40,7 @@ const TopBar: FC<TopBarProps> = ({ endNode, title = "", ...restOfProps }) => {
       component="div"
       sx={
         {
+          backgroundColor: 'black', // Makes the TopBar black
           // boxShadow: 'none', // Uncomment to hide shadow
         }
       }
@@ -53,6 +54,7 @@ const TopBar: FC<TopBarProps> = ({ endNode, title = "", ...restOfProps }) => {
             flexGrow: 0,
             textAlign: "left",
             whiteSpace: "nowrap",
+            color: "white", // Makes the title text white
           }}
         >
           {title}

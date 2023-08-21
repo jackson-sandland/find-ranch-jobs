@@ -1,16 +1,17 @@
 import { FC, Fragment, useState } from "react";
 import { Avatar, Box, Button, Chip, Typography } from "@mui/material";
+import AgricultureIcon from '@mui/icons-material/Agriculture';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import BookmarkBorderOutlinedIcon from "@mui/icons-material/BookmarkBorderOutlined";
 import { styled } from "@mui/system";
 import { SvgIconProps } from "@mui/material";
 
-interface StyledIconProps extends SvgIconProps {
+interface StyledBookmarkIconProps extends SvgIconProps {
   isBookmarked: boolean;
   onClick: () => void;
 }
 
-const StyledIcon = styled(({ isBookmarked, onClick, ...props }: StyledIconProps) => {
+const StyledBookmarkIcon = styled(({ isBookmarked, onClick, ...props }: StyledBookmarkIconProps) => {
   return isBookmarked ? <BookmarkIcon {...props} onClick={onClick} /> : <BookmarkBorderOutlinedIcon {...props} onClick={onClick} />;
 })`
   font-size: 24px;
@@ -73,20 +74,20 @@ const JobListing: FC<JobListingProps> = ({
       >
         <Box display="flex" justifyContent="space-between">
           <Box bgcolor="white" borderRadius="16px" p={1}>
-            <Typography variant="body2" style={{ color: "black" }}>
+            <Typography variant="body2" style={{ color: "black", fontWeight: "bold" }}>
               {renderJobPostingDate()}
             </Typography>
           </Box>
           <Box bgcolor="white" borderRadius="50%" width="32px" height="32px" display="flex" alignItems="center" justifyContent="center">
-            <StyledIcon isBookmarked={isBookmarked} onClick={handleBookmarkToggle} />
+            <StyledBookmarkIcon isBookmarked={isBookmarked} onClick={handleBookmarkToggle} />
           </Box>
         </Box>
         <Box display="flex" alignItems="center" mt={2}>
-          <Box>
+          <Box flexGrow={1}>
             <Typography variant="body2" style={{ color: "black" }}>{companyName}</Typography>
             <Typography variant="h5" style={{ color: "black" }}>{jobTitle}</Typography>
           </Box>
-          <Avatar src={companyIcon} />
+          <AgricultureIcon style={{ fontSize: 40 }}/>
         </Box>
         {handleRenderTags()}
         <Box bgcolor="white" p={2}>
