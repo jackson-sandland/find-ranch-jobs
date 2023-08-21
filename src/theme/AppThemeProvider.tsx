@@ -1,13 +1,15 @@
-import { FunctionComponent, useMemo, PropsWithChildren } from 'react';
-import { CacheProvider, EmotionCache } from '@emotion/react';
-import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
-import { useAppStore } from '../store';
-import DARK_THEME from './dark';
-import LIGHT_THEME from './light';
-import createEmotionCache from './createEmotionCache';
+import { FunctionComponent, useMemo, PropsWithChildren } from "react";
+import { CacheProvider, EmotionCache } from "@emotion/react";
+import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
+import { useAppStore } from "../store";
+import DARK_THEME from "./dark";
+import LIGHT_THEME from "./light";
+import createEmotionCache from "./createEmotionCache";
 
 function getThemeByDarkMode(darkMode: boolean) {
-  return darkMode ? createTheme(DARK_THEME) : createTheme(LIGHT_THEME);
+  return darkMode
+    ? createTheme({ ...DARK_THEME, typography: { fontFamily: "Orkney, Roboto, sans-serif" } })
+    : createTheme({ ...LIGHT_THEME, typography: { fontFamily: "Orkney, Roboto, sans-serif" } });
 }
 
 // Client-side cache, shared for the whole session of the user in the browser.

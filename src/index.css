@@ -1,11 +1,58 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
-    'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family:
+    "Orkney",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Roboto",
+    "Oxygen",
+    "Ubuntu",
+    "Cantarell",
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family: "Orkney", source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+@font-face {
+  font-family: "Orkney";
+  src:
+    local("Orkney-Regular"),
+    url(./assets/font/orkney-regular.otf) format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Orkney";
+  src:
+    local("Orkney-Bold"),
+    url(./assets/font/orkney-bold.otf) format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Orkney";
+  src:
+    local("Orkney-Light"),
+    url(./assets/font/orkney-light.otf) format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Orkney";
+  src:
+    local("Orkney-Medium"),
+    url(./assets/font/orkney-medium.otf) format("opentype");
+  font-weight: 500;
+  font-style: normal;
 }

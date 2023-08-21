@@ -54,7 +54,12 @@ const JobListing: FC<JobListingProps> = ({
   const handleRenderTags = () => (
     <Box mt={1} style={{ margin: "20px 0 20px 10px" }}>
       {jobTags.map((tag: string, index: number) => (
-        <Chip label={tag} key={index} size="small" style={{ color: "black", border: "1px solid grey" }} />
+        <Chip
+          label={tag}
+          key={index}
+          size="small"
+          style={{ color: "black", border: "1px solid grey", margin: "3px" }}
+        />
       ))}
     </Box>
   );
@@ -102,7 +107,7 @@ const JobListing: FC<JobListingProps> = ({
                 {jobTitle}
               </Typography>
             </Box>
-            <AgricultureIcon style={{ fontSize: 40 }} />
+            <AgricultureIcon style={{ fontSize: 40, marginTop: "18px" }} />
           </Box>
           {handleRenderTags()}
           <Box bgcolor="white" p={2}>
