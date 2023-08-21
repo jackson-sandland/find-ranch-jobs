@@ -52,7 +52,7 @@ const JobListing: FC<JobListingProps> = ({
   };
 
   const handleRenderTags = () => (
-    <Box mt={1} style={{ margin: "20px 0 20px 10px" }}>
+    <Box mt={1} style={{ margin: "20px 0 8px 10px", position: "absolute", bottom: 0 }}>
       {jobTags.map((tag: string, index: number) => (
         <Chip
           label={tag}
@@ -78,7 +78,13 @@ const JobListing: FC<JobListingProps> = ({
         p={1}
         sx={{ border: "1px solid lightgrey", borderRadius: "20px" }}
       >
-        <Box bgcolor={backgroundColor} color="black" borderRadius="16px" p={1} sx={{ borderRadius: "20px" }}>
+        <Box
+          bgcolor={backgroundColor}
+          color="black"
+          borderRadius="16px"
+          p={1}
+          sx={{ borderRadius: "20px", height: "20vh", position: "relative" }}
+        >
           <Box display="flex" justifyContent="space-between">
             <Box bgcolor="white" borderRadius="16px" p={1} style={{ margin: "10px" }}>
               <Typography variant="body2" style={{ color: "black", fontWeight: "bold", lineHeight: "15px" }}>
@@ -125,10 +131,11 @@ const JobListing: FC<JobListingProps> = ({
             style={{
               backgroundColor: "black",
               color: "white",
-              borderRadius: "8px",
+              borderRadius: "24px",
               textTransform: "none",
               height: "32px",
               lineHeight: "1px",
+              marginTop: "10px",
             }}
           >
             Details
