@@ -1,13 +1,22 @@
 import { FC, Fragment, useState } from "react";
 import { Avatar, Box, Button, Chip, Typography } from "@mui/material";
+import BookmarkIcon from '@mui/icons-material/Bookmark';
 import BookmarkBorderOutlinedIcon from "@mui/icons-material/BookmarkBorderOutlined";
 import { styled } from "@mui/system";
+import { SvgIconProps } from "@mui/material";
 
-const StyledBookmarkBorderOutlinedIcon = styled(BookmarkBorderOutlinedIcon)({
-  fontSize: 24,
-  padding: "2px",
-  color: "black",
-});
+interface StyledIconProps extends SvgIconProps {
+  isBookmarked: boolean;
+  onClick: () => void;
+}
+
+const StyledIcon = styled(({ isBookmarked, onClick, ...props }: StyledIconProps) => {
+  return isBookmarked ? <BookmarkIcon {...props} onClick={onClick} /> : <BookmarkBorderOutlinedIcon {...props} onClick={onClick} />;
+})`
+  font-size: 24px;
+  padding: 2px;
+  color: black;
+`;
 
 interface JobListingProps {
   jobPostingDate: string;
@@ -30,9 +39,14 @@ const JobListing: FC<JobListingProps> = ({
 }) => {
   const colors = ["primary.main", "secondary.main", "error.main", "warning.main", "info.main", "success.main"];
   const [colorIndex, setColorIndex] = useState(0);
+  const [isBookmarked, setIsBookmarked] = useState(false); 
 
   const handleColorChange = () => {
     setColorIndex((colorIndex + 1) % colors.length);
+  };
+
+  const handleBookmarkToggle = () => {
+    setIsBookmarked(!isBookmarked);
   };
 
   const handleRenderTags = () =>
@@ -41,6 +55,11 @@ const JobListing: FC<JobListingProps> = ({
         <Chip label={tag} key={index} style={{ color: "black" }}/>
       ))}
     </Box>
+
+  const renderJobPostingDate = () => {
+    const date = new Date(jobPostingDate);
+    return `${date.getDate()} ${date.toLocaleString('default', { month: 'long' })} ${date.getFullYear()}`;
+  }
 
   return (
     <Fragment>
@@ -53,9 +72,13 @@ const JobListing: FC<JobListingProps> = ({
         sx={{ border: "1px solid black", borderRadius: "8px" }}
       >
         <Box display="flex" justifyContent="space-between">
-          <Typography variant="body2" style={{ color: "black" }}>{jobPostingDate}</Typography>
-          <Box bgcolor="white" borderRadius="50%" width="24px" height="24px">
-            <StyledBookmarkBorderOutlinedIcon />
+          <Box bgcolor="white" borderRadius="16px" p={1}>
+            <Typography variant="body2" style={{ color: "black" }}>
+              {renderJobPostingDate()}
+            </Typography>
+          </Box>
+          <Box bgcolor="white" borderRadius="50%" width="32px" height="32px" display="flex" alignItems="center" justifyContent="center">
+            <StyledIcon isBookmarked={isBookmarked} onClick={handleBookmarkToggle} />
           </Box>
         </Box>
         <Box display="flex" alignItems="center" mt={2}>
@@ -87,3 +110,4 @@ const JobListing: FC<JobListingProps> = ({
 };
 
 export default JobListing;
+
