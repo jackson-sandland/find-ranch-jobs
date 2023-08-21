@@ -56,20 +56,20 @@ const JobListing: FC<JobListingProps> = ({
             <Chip label={tag} key={index} />
           ))}
         </Box>
-      </Box>
-      <Box bgcolor="white" p={2} sx={{ border: "1px solid black" }}>
-        <Box display="flex" justifyContent="space-between">
-          <Box>
-            <Typography variant="h6" style={{ color: "black" }}>
-              {jobRate}
-            </Typography>
-            <Typography variant="body2" style={{ color: "grey" }}>
-              {jobLocation}
-            </Typography>
+        <Box bgcolor="white" p={2}>
+          <Box display="flex" justifyContent="space-between">
+            <Box>
+              <Typography variant="h6" style={{ color: "black" }}>
+                {jobRate}
+              </Typography>
+              <Typography variant="body2" style={{ color: "grey" }}>
+                {jobLocation}
+              </Typography>
+            </Box>
+            <Button variant="contained" style={{ backgroundColor: "black", color: "white", borderRadius: "8px" }}>
+              Details
+            </Button>
           </Box>
-          <Button variant="contained" style={{ backgroundColor: "black", color: "white", borderRadius: "8px" }}>
-            Details
-          </Button>
         </Box>
       </Box>
     </Fragment>
