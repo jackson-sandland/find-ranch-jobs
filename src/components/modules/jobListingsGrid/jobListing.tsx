@@ -52,7 +52,7 @@ const JobListing: FC<JobListingProps> = ({
   };
 
   const handleRenderTags = () => (
-    <Box mt={1}>
+    <Box mt={1} style={{ margin: "20px 0 20px 10px" }}>
       {jobTags.map((tag: string, index: number) => (
         <Chip label={tag} key={index} size="small" style={{ color: "black", border: "1px solid grey" }} />
       ))}
@@ -70,18 +70,12 @@ const JobListing: FC<JobListingProps> = ({
         bgcolor={"white"}
         color="black"
         borderRadius="16px"
-        p={2}
-        sx={{ border: "1px solid grey", borderRadius: "20px" }}
+        p={1}
+        sx={{ border: "1px solid lightgrey", borderRadius: "20px" }}
       >
-        <Box
-          bgcolor={backgroundColor}
-          color="black"
-          borderRadius="16px"
-          p={2}
-          sx={{ border: "1px solid grey", borderRadius: "20px" }}
-        >
+        <Box bgcolor={backgroundColor} color="black" borderRadius="16px" p={1} sx={{ borderRadius: "20px" }}>
           <Box display="flex" justifyContent="space-between">
-            <Box bgcolor="white" borderRadius="16px" p={1}>
+            <Box bgcolor="white" borderRadius="16px" p={1} style={{ margin: "10px" }}>
               <Typography variant="body2" style={{ color: "black", fontWeight: "bold" }}>
                 {renderJobPostingDate()}
               </Typography>
@@ -94,11 +88,12 @@ const JobListing: FC<JobListingProps> = ({
               display="flex"
               alignItems="center"
               justifyContent="center"
+              style={{ margin: "10px" }}
             >
               <StyledBookmarkIcon isBookmarked={isBookmarked} onClick={handleBookmarkToggle} />
             </Box>
           </Box>
-          <Box display="flex" alignItems="center" mt={2}>
+          <Box display="flex" alignItems="center" mt={2} style={{ margin: "10px" }}>
             <Box flexGrow={1}>
               <Typography variant="body2" style={{ color: "black" }}>
                 {companyName}
