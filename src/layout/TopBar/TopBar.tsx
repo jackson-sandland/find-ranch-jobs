@@ -36,34 +36,38 @@ const TopBar: FC<TopBarProps> = ({ endNode, title = "", ...restOfProps }) => {
   };
 
   return (
-    <AppBar
-      component="div"
-      sx={
-        {
-          backgroundColor: 'black',
-          boxShadow: 'none', 
-          paddingX: 24,
+    <div style={{ paddingBottom: '3rem' }}>
+      <AppBar
+        component="div"
+        sx={
+          {
+            backgroundColor: 'black',
+            boxShadow: 'none', 
+            paddingX: 24,
+            borderBottom: '1px solid darkgrey',
+            paddingY: 3,
+          }
         }
-      }
-      {...restOfProps}
-    >
-      <Toolbar disableGutters sx={{ paddingX: 1, justifyContent: "space-between" }}>
-        <Typography
-          variant="h6"
-          sx={{
-            marginX: 1,
-            flexGrow: 0,
-            textAlign: "left",
-            whiteSpace: "nowrap",
-            color: "white", // Makes the title text white
-          }}
-        >
-          {title}
-        </Typography>
-        {renderButtons()}
-        {endNode}
-      </Toolbar>
-    </AppBar>
+        {...restOfProps}
+      >
+        <Toolbar disableGutters sx={{ paddingX: 1, justifyContent: "space-between" }}>
+          <Typography
+            variant="h6"
+            sx={{
+              marginX: 1,
+              flexGrow: 0,
+              textAlign: "left",
+              whiteSpace: "nowrap",
+              color: "white", // Makes the title text white
+            }}
+          >
+            {title}
+          </Typography>
+          {renderButtons()}
+          {endNode}
+        </Toolbar>
+      </AppBar>
+    </div>
   );
 };
 

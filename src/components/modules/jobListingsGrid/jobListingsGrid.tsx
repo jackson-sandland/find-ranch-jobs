@@ -28,13 +28,13 @@ const JobListingsGrid = () => {
   return (
     <Box style={{ backgroundColor: "white", padding: "0 20vw" }}>
       <Box display="flex" flexDirection="row">
-        <Box style={{ backgroundColor: "lightgrey", width: "15vw", height: "100vh" }}>
+        <Box style={{ backgroundColor: "lightgrey", width: "15vw", height: "100vh", margin: "40px" }}>
           <Typography variant="h4" style={{ color: "black" }}>
             SIDEBAR
           </Typography>
         </Box>
         <Box display="flex" flexDirection="column" flexGrow={1}>
-          <Box display="flex" justifyContent="space-between" alignItems="center">
+          <Box display="flex" justifyContent="space-between" alignItems="center" style={{ marginTop: "25px" }}>
             <Typography variant="h4" style={{ color: "black" }}>
               Recommended jobs
             </Typography>

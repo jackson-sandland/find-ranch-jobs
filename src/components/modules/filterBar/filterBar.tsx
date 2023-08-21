@@ -69,7 +69,7 @@ const FilterBar = () => {
     ));
 
   return (
-    <Stack direction="row" justifyContent="space-between" spacing={2} sx={{ marginTop: "20px" }}>
+    <Stack direction="row" justifyContent="space-between" spacing={2} sx={{ marginTop: "50px", padding: "0 20vw", marginBottom: "50px" }}>
       {handleRenderFilterOptions()}
     </Stack>
   );
