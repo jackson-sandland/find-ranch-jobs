@@ -109,7 +109,7 @@ const JobListing: FC<JobListingProps> = ({
               <Typography variant="body2" style={{ color: "black" }}>
                 {companyName}
               </Typography>
-              <Typography variant="h5" style={{ color: "black" }}>
+              <Typography variant="h5" style={{ color: "black", marginTop: "10px" }}>
                 {jobTitle}
               </Typography>
             </Box>

@@ -1,7 +1,7 @@
 import { Fragment, useState } from "react";
 import { AppBar, Button, Toolbar, Typography, IconButton } from "@mui/material";
 import { FC, ReactNode } from "react";
-import StarIcon from "@mui/icons-material/Star";
+import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 
 interface TopBarProps {
   endNode?: ReactNode;
@@ -40,7 +40,7 @@ const TopBar: FC<TopBarProps> = ({ endNode, title = "", ...restOfProps }) => {
           {buttonTitle}
         </Button>
         <IconButton>
-          <StarIcon />
+          <FiberManualRecordIcon />
         </IconButton>
       </Fragment>
     ));
