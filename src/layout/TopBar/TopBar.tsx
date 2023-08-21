@@ -27,7 +27,9 @@ const TopBar: FC<TopBarProps> = ({ endNode, title = "", ...restOfProps }) => {
   const renderButtons = () => {
     return buttonTitles.map((buttonTitle, index) => (
       <Fragment key={index}>
-        <Button onClick={() => {}} style={{ color: "white" }}>{buttonTitle}</Button>
+        <Button onClick={() => {}} style={{ color: "white" }}>
+          {buttonTitle}
+        </Button>
         <IconButton>
           <StarIcon />
         </IconButton>
@@ -36,18 +38,16 @@ const TopBar: FC<TopBarProps> = ({ endNode, title = "", ...restOfProps }) => {
   };
 
   return (
-    <div style={{ paddingBottom: '3rem' }}>
+    <div style={{ paddingBottom: "3rem" }}>
       <AppBar
         component="div"
-        sx={
-          {
-            backgroundColor: 'black',
-            boxShadow: 'none', 
-            paddingX: 24,
-            borderBottom: '1px solid darkgrey',
-            paddingY: 3,
-          }
-        }
+        sx={{
+          backgroundColor: "black",
+          boxShadow: "none",
+          paddingX: 24,
+          borderBottom: "1px solid darkgrey",
+          paddingY: 3,
+        }}
         {...restOfProps}
       >
         <Toolbar disableGutters sx={{ paddingX: 1, justifyContent: "space-between" }}>

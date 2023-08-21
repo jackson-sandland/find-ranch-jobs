@@ -1,44 +1,44 @@
-import { FunctionComponent, PropsWithChildren, useCallback, useState } from 'react';
-import { Stack } from '@mui/material/';
-import { useAppStore } from '../store/AppStore';
-import { ErrorBoundary, AppIconButton } from '../components';
-import { LinkToPage } from '../utils/type';
-import { useOnMobile } from '../hooks/layout';
-import { BOTTOM_BAR_DESKTOP_VISIBLE, TOP_BAR_DESKTOP_HEIGHT, TOP_BAR_MOBILE_HEIGHT } from './config';
-import { useEventSwitchDarkMode } from '../hooks/event';
-import TopBar from './TopBar';
-import SideBar from './SideBar';
-import BottomBar from './BottomBar';
+import { FunctionComponent, PropsWithChildren, useCallback, useState } from "react";
+import { Stack } from "@mui/material/";
+import { useAppStore } from "../store/AppStore";
+import { ErrorBoundary, AppIconButton } from "../components";
+import { LinkToPage } from "../utils/type";
+import { useOnMobile } from "../hooks/layout";
+import { BOTTOM_BAR_DESKTOP_VISIBLE, TOP_BAR_DESKTOP_HEIGHT, TOP_BAR_MOBILE_HEIGHT } from "./config";
+import { useEventSwitchDarkMode } from "../hooks/event";
+import TopBar from "./TopBar";
+import SideBar from "./SideBar";
+import BottomBar from "./BottomBar";
 
 // TODO: change to your app name or other word
-const TITLE_PUBLIC = 'Ranch Work'; // Title for pages without/before authentication
+const TITLE_PUBLIC = "Ranch Work"; // Title for pages without/before authentication
 
 /**
  * SideBar navigation items with links
  */
 const SIDE_BAR_ITEMS: Array<LinkToPage> = [
   {
-    title: 'Log In',
-    path: '/auth/login',
-    icon: 'login',
+    title: "Log In",
+    path: "/auth/login",
+    icon: "login",
   },
   {
-    title: 'Sign Up',
-    path: '/auth/signup',
-    icon: 'signup',
+    title: "Sign Up",
+    path: "/auth/signup",
+    icon: "signup",
   },
   {
-    title: 'About',
-    path: '/about',
-    icon: 'info',
+    title: "About",
+    path: "/about",
+    icon: "info",
   },
 ];
 
-if (process.env.REACT_APP_DEBUG === 'true') {
+if (process.env.REACT_APP_DEBUG === "true") {
   SIDE_BAR_ITEMS.push({
-    title: '[Debug Tools]',
-    path: '/dev',
-    icon: 'settings',
+    title: "[Debug Tools]",
+    path: "/dev",
+    icon: "settings",
   });
 }
 
@@ -47,19 +47,19 @@ if (process.env.REACT_APP_DEBUG === 'true') {
  */
 const BOTTOM_BAR_ITEMS: Array<LinkToPage> = [
   {
-    title: 'Log In',
-    path: '/auth/login',
-    icon: 'login',
+    title: "Log In",
+    path: "/auth/login",
+    icon: "login",
   },
   {
-    title: 'Sign Up',
-    path: '/auth/signup',
-    icon: 'signup',
+    title: "Sign Up",
+    path: "/auth/signup",
+    icon: "signup",
   },
   {
-    title: 'About',
-    path: '/about',
-    icon: 'info',
+    title: "About",
+    path: "/about",
+    icon: "info",
   },
 ];
 
@@ -80,7 +80,7 @@ const PublicLayout: FunctionComponent<PropsWithChildren> = ({ children }) => {
 
   // Variant 2 - Sidebar is drawer on mobile and desktop
   const sidebarOpen = sideBarVisible;
-  const sidebarVariant = 'temporary';
+  const sidebarVariant = "temporary";
 
   const title = TITLE_PUBLIC;
   document.title = title; // Also Update Tab Title
@@ -105,7 +105,7 @@ const PublicLayout: FunctionComponent<PropsWithChildren> = ({ children }) => {
   return (
     <Stack
       sx={{
-        minHeight: '100vh', // Full screen height
+        minHeight: "100vh", // Full screen height
         paddingTop: onMobile ? TOP_BAR_MOBILE_HEIGHT : TOP_BAR_DESKTOP_HEIGHT,
       }}
     >
@@ -115,9 +115,9 @@ const PublicLayout: FunctionComponent<PropsWithChildren> = ({ children }) => {
           title={title}
           endNode={
             <AppIconButton
-              icon={state.darkMode ? 'day' : 'night'} // Variant 1
+              icon={state.darkMode ? "day" : "night"} // Variant 1
               // icon="daynight" // Variant 2
-              title={state.darkMode ? 'Switch to Light mode' : 'Switch to Dark mode'}
+              title={state.darkMode ? "Switch to Light mode" : "Switch to Dark mode"}
               onClick={onSwitchDarkMode}
             />
           }

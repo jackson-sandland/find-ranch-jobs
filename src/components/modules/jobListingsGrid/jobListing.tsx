@@ -1,7 +1,7 @@
 import { FC, Fragment, useState } from "react";
 import { Box, Button, Chip, Typography } from "@mui/material";
-import AgricultureIcon from '@mui/icons-material/Agriculture';
-import BookmarkIcon from '@mui/icons-material/Bookmark';
+import AgricultureIcon from "@mui/icons-material/Agriculture";
+import BookmarkIcon from "@mui/icons-material/Bookmark";
 import BookmarkBorderOutlinedIcon from "@mui/icons-material/BookmarkBorderOutlined";
 import { styled } from "@mui/system";
 import { SvgIconProps } from "@mui/material";
@@ -12,7 +12,11 @@ interface StyledBookmarkIconProps extends SvgIconProps {
 }
 
 const StyledBookmarkIcon = styled(({ isBookmarked, onClick, ...props }: StyledBookmarkIconProps) => {
-  return isBookmarked ? <BookmarkIcon {...props} onClick={onClick} /> : <BookmarkBorderOutlinedIcon {...props} onClick={onClick} />;
+  return isBookmarked ? (
+    <BookmarkIcon {...props} onClick={onClick} />
+  ) : (
+    <BookmarkBorderOutlinedIcon {...props} onClick={onClick} />
+  );
 })`
   font-size: 24px;
   padding: 2px;
@@ -43,7 +47,7 @@ const JobListing: FC<JobListingProps> = ({
   // const colors = ["primary.main", "secondary.main", "error.main", "warning.main", "info.main", "success.main"];
   const colors = ["#E3DBFA", "#FBE2F4", "#FFE1CC", "#D4F6ED"];
   const [colorIndex, setColorIndex] = useState(0);
-  const [isBookmarked, setIsBookmarked] = useState(false); 
+  const [isBookmarked, setIsBookmarked] = useState(false);
 
   const handleColorChange = () => {
     setColorIndex((colorIndex + 1) % colors.length);
@@ -53,17 +57,18 @@ const JobListing: FC<JobListingProps> = ({
     setIsBookmarked(!isBookmarked);
   };
 
-  const handleRenderTags = () =>
+  const handleRenderTags = () => (
     <Box mt={2}>
       {jobTags.map((tag: string, index: number) => (
-        <Chip label={tag} key={index} style={{ color: "black" }}/>
+        <Chip label={tag} key={index} style={{ color: "black" }} />
       ))}
     </Box>
+  );
 
   const renderJobPostingDate = () => {
     const date = new Date(jobPostingDate);
-    return `${date.getDate()} ${date.toLocaleString('default', { month: 'long' })} ${date.getFullYear()}`;
-  }
+    return `${date.getDate()} ${date.toLocaleString("default", { month: "long" })} ${date.getFullYear()}`;
+  };
 
   return (
     <Fragment>
@@ -81,16 +86,28 @@ const JobListing: FC<JobListingProps> = ({
               {renderJobPostingDate()}
             </Typography>
           </Box>
-          <Box bgcolor="white" borderRadius="50%" width="32px" height="32px" display="flex" alignItems="center" justifyContent="center">
+          <Box
+            bgcolor="white"
+            borderRadius="50%"
+            width="32px"
+            height="32px"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+          >
             <StyledBookmarkIcon isBookmarked={isBookmarked} onClick={handleBookmarkToggle} />
           </Box>
         </Box>
         <Box display="flex" alignItems="center" mt={2}>
           <Box flexGrow={1}>
-            <Typography variant="body2" style={{ color: "black" }}>{companyName}</Typography>
-            <Typography variant="h5" style={{ color: "black" }}>{jobTitle}</Typography>
+            <Typography variant="body2" style={{ color: "black" }}>
+              {companyName}
+            </Typography>
+            <Typography variant="h5" style={{ color: "black" }}>
+              {jobTitle}
+            </Typography>
           </Box>
-          <AgricultureIcon style={{ fontSize: 40 }}/>
+          <AgricultureIcon style={{ fontSize: 40 }} />
         </Box>
         {handleRenderTags()}
         <Box bgcolor="white" p={2}>
@@ -114,4 +131,3 @@ const JobListing: FC<JobListingProps> = ({
 };
 
 export default JobListing;
-
