@@ -13,10 +13,10 @@ import {
 } from "./config";
 import TopBar from "src/layout/TopBar";
 import SideBar from "src/layout/SideBar";
-import FilterBar from "src/components/module/filterBar/filterBar";
-import JobListingsGrid from "src/components/module/jobListingsGrid/jobListingsGrid";
+import FilterBar from "src/components/modules/filterBar/filterBar";
+import JobListingsGrid from "src/components/modules/jobListingsGrid/jobListingsGrid";
 
-const TITLE_PRIVATE = "Find Ranch Jobs"; // Title for pages after authentication
+const TITLE_PRIVATE = "Find Ranch Jobs";
 
 /**
  * SideBar navigation items with links

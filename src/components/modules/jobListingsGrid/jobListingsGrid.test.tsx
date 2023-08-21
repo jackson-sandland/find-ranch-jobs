@@ -1,6 +1,6 @@
 // import { useState } from "react";
 // import { Grid, Typography, Box, Select, MenuItem } from "@mui/material";
-// import { JobListing } from "src/components/module/jobListingsGrid/jobListing";
+// import { JobListing } from "src/components/modules/jobListingsGrid/jobListing";
 
 // const JobListingsGrid = ({ jobListings }) => {
 //   const [sortBy, setSortBy] = useState("date");

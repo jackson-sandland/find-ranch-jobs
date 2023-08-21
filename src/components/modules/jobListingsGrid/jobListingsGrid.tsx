@@ -1,7 +1,15 @@
 import { useEffect, useState } from "react";
 import { Grid, Typography, Box, Select, MenuItem } from "@mui/material";
-import JobListing from "src/components/module/jobListingsGrid/jobListing";
-import { jobPostings } from "src/components/module/jobListingsGrid/jobListingsGridConstants";
+import JobListing from "src/components/modules/jobListingsGrid/jobListing";
+import { jobPostings } from "src/components/modules/jobListingsGrid/jobListingsGridConstants";
+import TuneIcon from "@mui/icons-material/Tune";
+import { styled } from "@mui/system";
+
+const StyledTuneIcon = styled(TuneIcon)({
+  fontSize: 24,
+  padding: "2px",
+  color: "black",
+});
 
 const JobListingsGrid = () => {
   const [jobListings, setJobListings] = useState<any[]>([]);
@@ -23,10 +31,14 @@ const JobListingsGrid = () => {
         </Typography>
         <Box display="flex" alignItems="center">
           <Typography variant="h6">{jobListings.length} Listings</Typography>
+          <Typography variant="body2" style={{ color: "grey" }}>
+            Sort By
+          </Typography>
           <Select value={sortBy} onChange={handleSortChange}>
             <MenuItem value={"date"}>Date</MenuItem>
             <MenuItem value={"title"}>Title</MenuItem>
           </Select>
+          <StyledTuneIcon />
         </Box>
       </Box>
       <Grid container spacing={2}>
