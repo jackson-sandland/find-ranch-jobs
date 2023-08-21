@@ -1,5 +1,5 @@
 import { FC, Fragment, useState } from "react";
-import { Avatar, Box, Button, Chip, Typography } from "@mui/material";
+import { Box, Button, Chip, Typography } from "@mui/material";
 import AgricultureIcon from '@mui/icons-material/Agriculture';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import BookmarkBorderOutlinedIcon from "@mui/icons-material/BookmarkBorderOutlined";
