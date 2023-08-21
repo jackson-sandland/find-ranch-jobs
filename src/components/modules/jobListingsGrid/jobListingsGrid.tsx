@@ -67,7 +67,7 @@ const JobListingsGrid = () => {
               <Typography variant="body2" style={{ color: "grey" }}>
                 Sort By
               </Typography>
-              <Select value={sortBy} onChange={handleSortChange}>
+              <Select value={sortBy} onChange={handleSortChange} sx={{ color: "black" }}>
                 <MenuItem value={"date"}>Date</MenuItem>
                 <MenuItem value={"title"}>Title</MenuItem>
               </Select>

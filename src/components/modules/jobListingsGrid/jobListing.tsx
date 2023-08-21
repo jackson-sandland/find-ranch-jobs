@@ -93,7 +93,7 @@ const JobListing: FC<JobListingProps> = ({
               display="flex"
               alignItems="center"
               justifyContent="center"
-              style={{ margin: "10px" }}
+              style={{ margin: "10px", cursor: "pointer" }}
             >
               <StyledBookmarkIcon isBookmarked={isBookmarked} onClick={handleBookmarkToggle} />
             </Box>

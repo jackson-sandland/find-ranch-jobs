@@ -5,7 +5,7 @@ export const jobPostings = [
     jobTitle: "Software Engineer",
     companyIcon: "https://example.com/company-icon.png",
     jobTags: ["React", "JavaScript", "Web Development"],
-    jobRate: "$100,000 - $120,000",
+    jobRate: "$70 /hr",
     jobLocation: "San Francisco, CA",
   },
   {
@@ -14,7 +14,7 @@ export const jobPostings = [
     jobTitle: "Financial Analyst",
     companyIcon: "https://example.com/finance-icon.png",
     jobTags: ["Finance", "Analysis", "Data"],
-    jobRate: "$80,000 - $100,000",
+    jobRate: "$120 /hr",
     jobLocation: "New York, NY",
   },
   {
@@ -23,7 +23,7 @@ export const jobPostings = [
     jobTitle: "Graphic Designer",
     companyIcon: "https://example.com/design-icon.png",
     jobTags: ["Design", "Creative", "Adobe"],
-    jobRate: "$60,000 - $80,000",
+    jobRate: "$85 /hr",
     jobLocation: "Los Angeles, CA",
   },
   {
@@ -32,7 +32,7 @@ export const jobPostings = [
     jobTitle: "Data Scientist",
     companyIcon: "https://example.com/health-icon.png",
     jobTags: ["Data Science", "Machine Learning", "Healthcare"],
-    jobRate: "$90,000 - $110,000",
+    jobRate: "$90 /hr",
     jobLocation: "Boston, MA",
   },
   {
@@ -41,7 +41,7 @@ export const jobPostings = [
     jobTitle: "Environmental Scientist",
     companyIcon: "https://example.com/environment-icon.png",
     jobTags: ["Environmental", "Research", "Sustainability"],
-    jobRate: "$70,000 - $90,000",
+    jobRate: "$55 /hr",
     jobLocation: "Seattle, WA",
   },
 ];
