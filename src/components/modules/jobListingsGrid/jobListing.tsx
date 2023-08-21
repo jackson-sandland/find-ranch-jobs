@@ -120,7 +120,17 @@ const JobListing: FC<JobListingProps> = ({
                   {jobLocation}
                 </Typography>
               </Box>
-              <Button variant="contained" style={{ backgroundColor: "black", color: "white", borderRadius: "8px" }}>
+              <Button
+                variant="contained"
+                style={{
+                  backgroundColor: "black",
+                  color: "white",
+                  borderRadius: "8px",
+                  textTransform: "none",
+                  height: "32px",
+                  lineHeight: "1px",
+                }}
+              >
                 Details
               </Button>
             </Box>
